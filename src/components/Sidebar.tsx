@@ -36,6 +36,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useCourses } from "@/courses/Provider";
 import { CourseColorDot } from "@/components/CourseColorDot";
+import { ThemeLogo } from "@/components/ThemeLogo";
 import type { AppSection, CourseId } from "../domain";
 
 type SidebarProps = {
@@ -94,14 +95,9 @@ export function Sidebar({
                                     height={32}
                                     className="hidden size-8 shrink-0 object-contain group-data-[collapsible=icon]:block"
                                 />
-                                <Image
-                                    src="/logo.png"
-                                    alt="Kulio"
-                                    width={160}
-                                    height={60}
-                                    priority
-                                    className="h-10 w-36 object-contain object-left group-data-[collapsible=icon]:hidden"
-                                />
+                                <span className="flex h-10 items-center group-data-[collapsible=icon]:hidden">
+                                    <ThemeLogo priority className="h-10" />
+                                </span>
                             </a>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
