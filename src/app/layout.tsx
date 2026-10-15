@@ -6,8 +6,7 @@ import "./globals.css";
 export const metadata: Metadata = {
     applicationName: "Kulio",
     title: "Kulio",
-    description:
-        "Catat tugas kuliah, pantau progres, dan temukan deadline berikutnya dalam satu ruang kerja.",
+    description: "Catat tugas kuliah, pantau progres, dan deadline.",
     icons: {
         icon: "/favicon.png",
         shortcut: "/favicon.png",
