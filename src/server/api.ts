@@ -2,6 +2,7 @@ import "server-only"
 import { NextResponse, type NextRequest } from "next/server"
 import { z } from "zod"
 import { ApiError, sameOrigin } from "./auth"
+import { DatabaseConfigurationError } from "./database"
 
 export const privateHeaders = {
   "Cache-Control": "private, no-store",
@@ -30,6 +31,12 @@ export function apiFailure(error: unknown) {
     return NextResponse.json(
       { error: "Data permintaan tidak valid. Periksa kembali isian Anda." },
       { status: 400, headers: privateHeaders },
+    )
+  }
+  if (error instanceof DatabaseConfigurationError) {
+    return NextResponse.json(
+      { error: "Database aplikasi belum terhubung. Periksa DATABASE_URL pada environment deployment." },
+      { status: 503, headers: privateHeaders },
     )
   }
   return NextResponse.json(
