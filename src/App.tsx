@@ -14,7 +14,6 @@ import {
     TaskInspectionDialog,
     type TaskInspection,
 } from "./components/TaskInspectionDialog";
-import { TaskCloudFeedback } from "./components/TaskCloudFeedback";
 import { useThemeChoice } from "./hooks/useThemeChoice";
 import { useTasks } from "./hooks/useTasks";
 import { AddTaskDialog } from "./components/AddTaskDialog";
@@ -53,10 +52,7 @@ export function App() {
         saveCourse,
         deleteCourse,
         ready,
-        loading,
         busy,
-        error,
-        refresh,
     } = useTasks(account.id);
     const [activeSection, setActiveSection] = useState<AppSection>(() =>
         new URL(window.location.href).searchParams.has("invite")
