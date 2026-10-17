@@ -229,7 +229,7 @@ export function App() {
                                 }
                             />
                             <section
-                                className="min-h-0 pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:overflow-auto md:p-8 md:pb-8 [scrollbar-gutter:stable] px-3 md:px-0"
+                                className="min-h-0 pb-[calc(5.5rem+env(safe-area-inset-bottom))] md:overflow-auto md:p-8 md:pb-8 [scrollbar-gutter:stable] px-3 md:px-5"
                                 id="main-content"
                                 tabIndex={-1}
                             >
