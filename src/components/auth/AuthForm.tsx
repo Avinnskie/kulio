@@ -10,8 +10,6 @@ import { LoginSchema, RegisterSchema } from "@/auth/domain";
 import { authDestination } from "@/auth/navigation";
 import { importBrowserTasks } from "@/lib/storage";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
 import { ThemeLogo } from "@/components/ThemeLogo";
 import { useThemeChoice } from "@/hooks/useThemeChoice";
 import {
@@ -62,7 +60,7 @@ export function AuthForm({
     const { legacyProfile, busy, error, notice, authenticate, clearError } =
         useAuth();
     const [mode, setMode] = useState<AuthMode>(initialMode);
-    const [importTasks, setImportTasks] = useState(false);
+    const [importTasks] = useState(false);
     const [fieldErrors, setFieldErrors] = useState<AuthFieldErrors>({});
     const router = useRouter();
     useThemeChoice();
